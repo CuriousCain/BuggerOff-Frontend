@@ -13,6 +13,7 @@
     <file url="file://$PROJECT_DIR$/src/app/index.coffee" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/app/index.scss" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/app/main/main.controller.spec.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/components/navbar/navbar.controller.coffee" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/components/navbar/navbar.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/components/navbar/navbar.scss" charset="UTF-8" />
   </component>

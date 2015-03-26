@@ -26,4 +26,17 @@ describe('bugs controller', function() {
 
     expect(scope.bugs.length > 1).toBeTruthy();
   }));
+
+  it('should return only 1 bug on GET', inject(function($controller) {
+    $controller('BugsCtrl', {
+      $scope: scope,
+      BugFactory: bugFactory
+    });
+
+    mock.flush();
+
+    var tb = scope.getBug(2);
+
+    expect(tb).toBeDefined();
+  }))
 });

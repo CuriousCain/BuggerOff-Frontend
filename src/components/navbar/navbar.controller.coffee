@@ -1,3 +1,6 @@
 angular.module "BuggOff"
-  .controller "NavbarCtrl", ($scope) ->
+  .controller "NavbarCtrl", ($scope, $location) ->
     $scope.date = new Date()
+
+    $scope.isActive = (viewLocation) ->
+      viewLocation == $location.path()

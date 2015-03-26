@@ -1,5 +1,5 @@
 angular.module 'BuggOff', ['ngResource', 'ui.router']
-  .config ($stateProvider, $urlRouterProvider) ->
+  .config ($stateProvider, $urlRouterProvider, $locationProvider) ->
     $stateProvider
       .state "home",
         url: "/",
@@ -12,3 +12,4 @@ angular.module 'BuggOff', ['ngResource', 'ui.router']
 
     $urlRouterProvider.otherwise '/'
 
+    $locationProvider.html5Mode({enabled: true, requireBase: false})
