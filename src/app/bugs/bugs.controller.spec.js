@@ -17,26 +17,32 @@ describe('bugs controller', function() {
   });
 
   it('should return a list of bugs greater than 1 on GET', inject(function($controller) {
+
     $controller('BugsCtrl', {
       $scope: scope,
       BugFactory: bugFactory
     });
 
+
     mock.flush();
 
-    expect(scope.bugs.length > 1).toBeTruthy();
+    var bugsLength = scope.bugs.length;
+
+    expect(bugsLength > 1).toBeTruthy();
   }));
 
   it('should return only 1 bug on GET', inject(function($controller) {
+    mock.expectGET("/api/bugs/1").respond(bugList[0]);
+
     $controller('BugsCtrl', {
       $scope: scope,
       BugFactory: bugFactory
     });
 
+    var tb = bugFactory.getBug(1);
+
     mock.flush();
 
-    var tb = scope.getBug(2);
-
-    expect(tb).toBeDefined();
-  }))
+    expect(angular.toJson(tb)).toBe(angular.toJson(bugList[0]));
+  }));
 });

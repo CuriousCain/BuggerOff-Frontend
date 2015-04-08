@@ -6,4 +6,5 @@ angular.module 'e2eMock', ['BuggOff', 'ngMockE2E']
 
     $httpBackend.whenGET(new RegExp('app/\.*')).passThrough()
     $httpBackend.whenGET(new RegExp('components/\.*')).passThrough()
+    $httpBackend.whenGET('/api/bugs/1').respond(200, bugsList[0])
     $httpBackend.whenGET('/api/bugs').respond(200, bugsList)

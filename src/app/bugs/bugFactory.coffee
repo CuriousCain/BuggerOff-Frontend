@@ -1,11 +1,12 @@
 angular.module "BuggOff"
   .factory "BugFactory", ($resource) ->
     service = {}
+    service.bugData = {}
 
     service.getAllBugs = ->
-      return $resource('/api/bugs').query()
+      $resource('/api/bugs').query()
 
     service.getBug = (id) ->
-      return $resource('/api/bugs/:id').get()
+      $resource('/api/bugs/:id').get({id: id})
 
     return service
