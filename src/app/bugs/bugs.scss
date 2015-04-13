@@ -1,0 +1,24 @@
+$bugOpenColor: #D93A32;
+$bugClosedColor: #32D956;
+
+.bugTitle {
+  text-align: center;
+}
+
+.bugIsClosed {
+  background-color: $bugClosedColor;
+}
+
+.bugIsOpen  {
+  background-color: $bugOpenColor;
+}
+
+.thumbnail {
+  box-shadow: 1px 1px 10px #888888;
+}
+
+.col-md-4 {
+  :hover {
+    cursor: pointer;
+  }
+}

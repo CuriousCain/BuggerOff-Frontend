@@ -4,9 +4,9 @@ angular.module "BuggOff"
     service.bugData = {}
 
     service.getAllBugs = ->
-      $resource('/api/bugs').query()
+      $resource('http://localhost:9425/bugs/All').query()
 
     service.getBug = (id) ->
-      $resource('/api/bugs/:id').get({id: id})
+      $resource('http://localhost:9425/bugs/GetByID/:id').get({id: id})
 
     return service

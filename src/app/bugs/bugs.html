@@ -12,26 +12,15 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-6 col-md-4" ng-repeat="bug in bugs">
-      <div class="thumbnail">
+    <div class="col-sm-6 col-md-4" ng-repeat="bug in bugs | orderBy:'BugId'"><!--TODO: Order by bug urgency/add date -->
+      <div class="thumbnail" ng-class="!BugFixed ? 'bugIsOpen' : 'bugIsClosed'">
         <div class="caption">
-          <h3>{{bug.Description}}</h3>
-          <p>{{bug.Fixed}}</p>
+          <p>{{bug.BugId}}</p>
+          <h3 class="bugTitle">{{bug.BugDetails}}</h3>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-sm-6 col-md-4">
-      <h3>{{getBug()}}</h3>
-    </div>
-  </div>
-
   <hr>
-
-  <div class="footer">
-    <p>With ♥ from <a href="https://twitter.com/Swiip">@Swiip</a></p>
-  </div>
-
 </div>
